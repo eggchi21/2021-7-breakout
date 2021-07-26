@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Minimal example using the CDN -->
+    <head>
+        <!-- Include Handsfree.js -->
+        <link rel="stylesheet" href="https://unpkg.com/handsfree@8.0.4/build/lib/assets/handsfree.css" />
+        <script src="https://unpkg.com/handsfree@8.0.4/build/lib/handsfree.js"></script>
+        
+    </head>
+
+    <body>
+        <script src="index.js"></script>
+        <!-- <p><img src="https://media.giphy.com/media/oEVNkOeQoVxiH9OtIK/giphy.gif" class="handsfree-hide-when-started"></p> -->
+        <div>
+        <button class="handsfree-show-when-stopped handsfree-hide-when-loading" onclick="handsfree.start()">Start Handsfree</button>
+        <button class="handsfree-show-when-loading" disabled>Loading...</button>
+        <button class="handsfree-show-when-started" onclick="handsfree.stop()">Stop Handsfree</button>
+        </div>
+    </body>
+</html>
