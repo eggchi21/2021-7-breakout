@@ -14,14 +14,17 @@
   <canvas id="myCanvas" width="1280" height="720" style=""></canvas>
   <script src="breakout.js"></script>
 
-  <div>
-    <!-- <button id="start" onClick="startButtonClickHandler()">START</button> -->
+  <div style="display: flex;
+      align-items: center;
+      justify-content: flex-start;">
     <div id="start" onClick="startButtonClickHandler()" class="btn btn-3d-circle">
       <span class="btn-3d-circle-content">
         <span class="btn-3d-circle-front">START</span>
       </span>
       <span class="btn-3d-circle-back" style="font-size: 17px">CLICK</span>
     </div>
+    <div style="font-size: 20px;">カメラの使用を許可してください。赤い点が目線になり、<br>首を動かすとパドルを動かすことができます。</div>
+
   </div>
 </body>
 
