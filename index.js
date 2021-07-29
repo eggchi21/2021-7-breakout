@@ -1,19 +1,30 @@
+const handsfree = new Handsfree({
+    showDebug: true,
+    weboji: {
+        enabled: true,
+    },
 
-/**
- * Instantiate Handsfree.js
- * - Try uncommenting some of the other models
- * @see https://handsfree.js.org/
- */
- window.handsfree = new Handsfree({
-  showDebug: true,
-  hands: true,
-  // facemesh: true,
-  // pose: true,
-  // holistic: true,
-  // weboji: true
 })
+handsfree.start();
+handsfree.plugin.facePointer.enable();
 
-// A simple plugin to log the data
-handsfree.use('logger', data => {
-  console.log(data)
+// handsfree.plugin.facePointer.pointer.speed = {
+//     x: 0.1,
+//     y: 0.1
+// }
+// handsfree.plugin.facePointer.pointer.offset = {
+//     x: 1000,
+//     y: 600
+// }
+
+document.addEventListener('handsfree-data', (event) => {
+    const data = event.detail
+
+    if (paddleWidth / 2 > data.weboji.pointer.x) {
+        paddleX = 0
+    } else if (canvas.width - data.weboji.pointer.x < paddleWidth / 2) {
+        paddleX = canvas.width - paddleWidth
+    } else {
+        paddleX = data.weboji.pointer.x - paddleWidth / 2;
+    }
 })
