@@ -21,9 +21,9 @@ document.addEventListener('handsfree-data', (event) => {
     const data = event.detail
 
     if (paddleWidth / 2 > data.weboji.pointer.x) {
-        paddleX = 0
+        paddleX = 0;
     } else if (canvas.width - data.weboji.pointer.x < paddleWidth / 2) {
-        paddleX = canvas.width - paddleWidth
+        paddleX = canvas.width - paddleWidth;
     } else {
         paddleX = data.weboji.pointer.x - paddleWidth / 2;
     }
